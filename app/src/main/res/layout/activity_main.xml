@@ -1,18 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.fundamentals.academy.ori.imagesearch.MainActivity">
+    tools:context="com.fundamentals.academy.ori.imagesearch.MainActivity"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="10dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/search_button"
+            android:layout_marginRight="10dp"
+            android:hint="what do you want to see?"
+            android:textSize="@dimen/basic_text_size"
+            android:id="@+id/search_tv"/>
 
-</android.support.constraint.ConstraintLayout>
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="show me!"
+            android:id="@+id/search_button"
+            android:layout_alignParentRight="true"
+            android:textSize="@dimen/basic_text_size"/>
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:id="@+id/images_feed">
+
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>
