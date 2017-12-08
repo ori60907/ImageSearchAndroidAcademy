@@ -40,14 +40,6 @@ public class PixabayServiceGenerator {
     static Retrofit retrofit = retrofit_builder.build();
 
     public PixabayService createService(){
-//        OkHttpClient.Builder http_client = new OkHttpClient.Builder();
-//        Retrofit.Builder retrofit_builder = new Retrofit.Builder()
-//                .baseUrl(BASE_URL)
-//                .client(http_client.build())
-//                .addConverterFactory(GsonConverterFactory.create());
-//
-//        Retrofit retrofit = retrofit_builder.build();
-
         return retrofit.create(PixabayService.class);
     }
 
